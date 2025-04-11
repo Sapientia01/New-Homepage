@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+:root {
+ --SoftOrange: hsl(35, 77%, 62%);
+ --SoftRed: hsl(5, 85%, 63%);
+ --OffWhite: hsl(36, 100%, 99%);
+ --GrayishBlue: hsl(233, 8%, 79%);
+ --DarkGrayishBlue: hsl(236, 13%, 42%);
+ --VeryDarkBlue: hsl(240, 100%, 5%);
+
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  object-position: center;
+  padding: 50px;
+  z-index: 1;
+}
+
+.body {
+  position: relative;
+  max-width: 1200px;
+  height: fit-content;
+  margin: 2px auto;
+  overflow: hidden;
+  z-index: 1;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  width: 100%;
+}
+header nav img {
+  display: none;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  color: var( --DarkGrayishBlue);
+  margin: 0 20px;
+  font-size: 15px;
+}
+
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.imageWeb {
+  background-image: url(assets/images/image-web-3-desktop.jpg);
+  background-size: 120%;
+  background-position: center;
+  grid-column: 1/3;
+  transition: all 250ms ease-in;
+}
+.card {
+  grid-column: 3/4;
+  grid-row: 1 /3;
+}
+
+h1 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  font-size: 3.5em;
+}
+
+article {
+  grid-column: 2/3;
+  grid-row: 2/3;
+
+}
+
+article p {
+  margin-top: 10px;
+  line-height: 23px;
+  font-size: 15px;
+  color: var(--DarkGrayishBlue) 
+}
+
+article button {
+  color: #fff ;
+  background: var(--SoftRed);
+  padding: 15px 30px;
+  margin-top: 40px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.card {
+  background: var(--VeryDarkBlue);
+  width: 100%;
+  height: fit-content;
+  padding: 30px 20px;
+  font-size: 15px;
+}
+.card h1 {
+  color: var(--SoftOrange);
+  margin-bottom: 10px;
+
+}
+.card h2 {
+  color: var(--OffWhite);
+  font-size: 1.2em;
+}
+
+.card p {
+  color: var(--GrayishBlue);
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  margin: 20px 0;
+  background: var(--OffWhite);
+}
+
+
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 130px;
+  margin-top: 20px;
+  
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.item img {
+  height: 130px;
+  margin-left: 15px;
+}
+
+.item h1 {
+  color: var(--GrayishBlue);
+  font-size: 2.5em;
+  margin-top: -5px;
+}
+.item h3 {
+  margin: 10px 0;
+}
+
+.item p {
+  color: var(--DarkGrayishBlue);
+  font-size: 15px;
+}
+
+.detail {
+  margin-left: 15px;
+  max-width: 200px;
+}
+
+
+.menuNav {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 33;
+  color: white;
+}
+
+.menuNav nav {
+  position: absolute;
+  left: 40%;
+  width: 60%;
+  height: 100%;
+  background: var(--OffWhite);
+
+}
+.menuNav ul {
+  list-style: none;
+  margin-top: 50%;
+}
+.menuNav a{
+  text-decoration: none;
+  margin: 20px;
+  color: var(--VeryDarkBlue);
+  line-height: 60px;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.menuNav img {
+  position: absolute;
+  width: 40px;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+}
+
+a:hover{
+  color: var(--SoftRed)
+}
+.imageWeb:hover {
+  background-size: 120%;
+}
+.card h2:hover {
+  color: var(--SoftOrange)
+}
+button:hover {
+  background: var(--VeryDarkBlue)
+}
+.flex h3:hover {
+  color: var(--SoftRed)
+}
+
+.open {
+  display: block;
+}
+
+
+@media (max-width: 650px ){
+  body{
+    padding: 0 auto;
+    height: fit-content;
+  }
+  header nav ul {
+    display: none;
+  }
+  
+  header  nav img {
+    display: inline-block;
+    
+  }
+  .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imageWeb {
+    width: 100%;
+    height: 270px;
+    background: url(assets/images/image-web-3-mobile.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-clip: cover;
+  }
+  .flexContainer {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .item {
+    margin-bottom: 25px;
+  }
+}
+
